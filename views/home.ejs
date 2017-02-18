@@ -7,22 +7,36 @@
 </head>
 
 <body>
-    <p>Welcome to
-        <%= message %>
+    <form action="/" method="GET">
+            <input type="text" name="urlLBC" />
+            <button type="submit">
+                Housing Ad From <%= RealEstateAdCity %>
+            </button<
+    </form>
+    <p> Real Estate LeBonCoin Ad's price :
+	    <%= RealEstateAdPrice %>  
+	</p>
+    <p> Real Estate LeBonCoin Ad's surface :
+	    <%= RealEstateAdSurface %>  
+	</p>
+    <p> Real Estate LeBonCoin Ad's price per m2 :
+	    <%= RealEstateAdPricePerM2 %>  
     </p>
-
-    <p> Real Estate LeBonCoin Ad price :
-	        <%= propertyData.properties.price %>  
-	    </p>
-	    <p> Real Estate LeBonCoin Ad price per m2 :
-	        <%= propertyData.properties.priceM %>  
-	    </p>
-	    <p> City's avergae price per m2 :
-	        <%= averagePricePerm2 %>
-	    </p>
-	    <p> Is it a good deal ?
-	        <%= deal %>
-	    </p>
+    <p> Appartment or house ? :
+	    <%= RealEstateAdType %>  
+    </p>
+    <p> City :
+	    <%= RealEstateAdCity %>
+	</p>
+    <p> Postal Code :
+	    <%= RealEstateAdPcode %>
+	</p>
+	<p> City's average price per m2 :
+        <%= CityAveragePricePerm2 %>
+	</p>
+    <p> Is it a good deal ?
+	    <%= messageDeal %>
+	</p>
 </body>
 
 </html>
