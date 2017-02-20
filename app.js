@@ -61,7 +61,7 @@ function callLeBonCoin( url ) {
                 }
             });
 
-            // Retrieving the property's type  
+            // Retrieving the property's type 
             $( 'h2.clearfix span.property' ).each( function ( i, element ) {
                 var a = $( this );
                 if ( a.text() == "Type de bien" ) {
