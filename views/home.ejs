@@ -7,20 +7,25 @@
 </head>
 
 <body>
+    <p> Enter a link to any LeBonCoin ad 
+	</p>
     <form action="/" method="GET">
             <input type="text" name="urlLBC" />
             <button type="submit">
-                Housing Ad From <%= RealEstateAdCity %>
-            </button<
+                Submit
+            </button>
     </form>
+    <p> Housing Ad From  :
+	    <%= RealEstateAdCity %>
+	</p>
     <p> Real Estate LeBonCoin Ad's price :
-	    <%= RealEstateAdPrice %>  
+	    <%= RealEstateAdPrice %> €
 	</p>
     <p> Real Estate LeBonCoin Ad's surface :
-	    <%= RealEstateAdSurface %>  
+	    <%= RealEstateAdSurface %> m²
 	</p>
     <p> Real Estate LeBonCoin Ad's price per m2 :
-	    <%= RealEstateAdPricePerM2 %>  
+	    <%= RealEstateAdPricePerM2 %> €
     </p>
     <p> Appartment or house ? :
 	    <%= RealEstateAdType %>  
@@ -32,7 +37,7 @@
 	    <%= RealEstateAdPcode %>
 	</p>
 	<p> City's average price per m2 :
-        <%= CityAveragePricePerm2 %>
+        <%= CityAveragePricePerm2 %> €
 	</p>
     <p> Is it a good deal ?
 	    <%= messageDeal %>

@@ -34,8 +34,8 @@ var propertyData = {
     },
 };
 
-function callLeBonCoin() {
-    request( 'https://www.leboncoin.fr/ventes_immobilieres/1087302673.htm?ca=12_s', function ( error, response, body ) {
+function callLeBonCoin( url ) {
+    request( url, function ( error, response, body ) {
         if ( !error && response.statusCode == 200 ) {
 
             var $ = cheerio.load( body );
@@ -78,8 +78,8 @@ function callLeBonCoin() {
 }
 
 
-function callMeilleursAgents( city, postalCode, type, priceM ) {
-    request( "https://www.meilleursagents.com/prix-immobilier/" + city.toLowerCase() + "-" + postalCode.trim() + "/", function ( error, response, body ) {
+function callMeilleursAgents( city, postalCode, type, priceM, url ) {
+    request( url, function ( error, response, body ) {
         if ( !error && response.statusCode == 200 ) {
 
             var $ = cheerio.load( body );
@@ -111,8 +111,10 @@ function callMeilleursAgents( city, postalCode, type, priceM ) {
 
 app.get( '/', function ( req, res ) {
     // Requests
-    callLeBonCoin();
-    callMeilleursAgents( propertyData.properties.city, propertyData.properties.postalCode, propertyData.properties.type, propertyData.properties.priceM );
+    var urlLB = req.query.urlLBC
+    callLeBonCoin( urlLB );
+    var urlMA = "https://www.meilleursagents.com/prix-immobilier/" + propertyData.properties.city.toLowerCase() + "-" + propertyData.properties.postalCode.trim() + "/"
+    callMeilleursAgents( propertyData.properties.city, propertyData.properties.postalCode, propertyData.properties.type, propertyData.properties.priceM, urlMA );
 
     // Displaying results on localhost:3000
     // Responses
